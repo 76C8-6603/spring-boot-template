@@ -1,0 +1,30 @@
+server:
+  servlet:
+    context-path: /template
+
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+
+spring:
+  datasource:
+    name: "@datasource.name@"
+    driver-class-name: "@datasource.driver-class-name@"
+    url: "@datasource.url@"
+    username: "@datasource.username@"
+    password: "@datasource.password@"
+
+
+logging:
+  level:
+    web: "@log.level@"
+    com.ming.dictionary: "@log.level@"
+
+filter:
+  throttle:
+    call:
+      unit-count: 2
+      time-unit: pt1h
+      max-count: 5
+  post:
+    max-content-length: 100
